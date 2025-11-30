@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&amp;display=swap');
+  </style>
+  <text x="50" y="78"
+        font-family="'Hachi Maru Pop', cursive"
+        font-size="90"
+        fill="#e8e8e8"
+        text-anchor="middle">勉</text>
+</svg>
