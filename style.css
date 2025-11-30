@@ -413,17 +413,26 @@ body:has(.tag[data-activity="languages"]:hover) .stick-figure[data-for="language
     50% { opacity: 0.8; }
 }
 
-/* Electronics - sparks */
-.spark {
-    fill: #33ff33;
-    animation: sparkle 0.2s ease-in-out infinite;
+/* Electronics - oscilloscope */
+.waveform {
+    stroke: #33ff33;
+    fill: none;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: waveMove 1.5s linear infinite;
 }
-.spark.s1 { animation-delay: 0s; }
-.spark.s2 { animation-delay: 0.1s; }
-.spark.s3 { animation-delay: 0.15s; }
-@keyframes sparkle {
-    0%, 100% { opacity: 0; transform: scale(0.5); }
-    50% { opacity: 1; transform: scale(1.5); }
+.knob-arm {
+    animation: turnKnob 2s ease-in-out infinite;
+    transform-origin: 25px 35px;
+}
+@keyframes waveMove {
+    0% { stroke-dashoffset: 60; }
+    100% { stroke-dashoffset: 0; }
+}
+@keyframes turnKnob {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
 }
 
 /* Immunology - dividing cells */
@@ -544,6 +553,17 @@ body:has(.tag[data-activity="languages"]:hover) .stick-figure[data-for="language
 @keyframes bikeBounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-2px); }
+}
+.rider-leg-l, .rider-leg-r {
+    animation: legPedal 0.5s ease-in-out infinite;
+    transform-origin: 52px 24px;
+}
+.rider-leg-r {
+    animation-delay: 0.25s;
+}
+@keyframes legPedal {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
 }
 
 /* Languages - speech bubbles */
