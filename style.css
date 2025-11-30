@@ -318,6 +318,272 @@ h1 {
     font-style: italic;
 }
 
+/* Stick Figures */
+.stick-figures {
+    height: 100px;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stick-figure {
+    display: none;
+    width: 150px;
+    height: 100px;
+    color: var(--muted);
+    opacity: 0;
+    animation: figureAppear 0.3s ease forwards;
+}
+
+@keyframes figureAppear {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Show figures on tag hover using :has() */
+body:has(.tag[data-activity="programming"]:hover) .stick-figure[data-for="programming"],
+body:has(.tag[data-activity="ai"]:hover) .stick-figure[data-for="ai"],
+body:has(.tag[data-activity="electronics"]:hover) .stick-figure[data-for="electronics"],
+body:has(.tag[data-activity="immunology"]:hover) .stick-figure[data-for="immunology"],
+body:has(.tag[data-activity="running"]:hover) .stick-figure[data-for="running"],
+body:has(.tag[data-activity="cycling"]:hover) .stick-figure[data-for="cycling"],
+body:has(.tag[data-activity="languages"]:hover) .stick-figure[data-for="languages"] {
+    display: block;
+}
+
+/* Programming - typing animation */
+.typing-arm-left {
+    animation: typeLeft 0.15s ease-in-out infinite alternate;
+    transform-origin: 35px 30px;
+}
+.typing-arm-right {
+    animation: typeRight 0.15s ease-in-out infinite alternate-reverse;
+    transform-origin: 35px 30px;
+}
+@keyframes typeLeft {
+    from { transform: rotate(-5deg); }
+    to { transform: rotate(5deg); }
+}
+@keyframes typeRight {
+    from { transform: rotate(5deg); }
+    to { transform: rotate(-5deg); }
+}
+.code-line {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    animation: typeCode 1.5s ease-out infinite;
+}
+.code-line.cl1 { animation-delay: 0s; }
+.code-line.cl2 { animation-delay: 0.3s; }
+.code-line.cl3 { animation-delay: 0.6s; }
+.code-line.cl4 { animation-delay: 0.9s; }
+.cursor {
+    fill: currentColor;
+    animation: cursorBlink 0.4s step-end infinite;
+}
+@keyframes typeCode {
+    0% { stroke-dashoffset: 20; }
+    50%, 100% { stroke-dashoffset: 0; }
+}
+@keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* AI - floating nodes */
+.ai-node {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+.ai-node.n1 { animation-delay: 0s; }
+.ai-node.n2 { animation-delay: 0.3s; }
+.ai-node.n3 { animation-delay: 0.6s; }
+.ai-node.n4 { animation-delay: 0.9s; }
+.ai-node.n5 { animation-delay: 1.2s; }
+.ai-line {
+    animation: linePulse 1.5s ease-in-out infinite;
+    stroke-dasharray: 5 3;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes linePulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+}
+
+/* Electronics - sparks */
+.spark {
+    fill: #33ff33;
+    animation: sparkle 0.2s ease-in-out infinite;
+}
+.spark.s1 { animation-delay: 0s; }
+.spark.s2 { animation-delay: 0.1s; }
+.spark.s3 { animation-delay: 0.15s; }
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Immunology - dividing cells */
+.amoeba {
+    animation: amoebaWobble 2s ease-in-out infinite;
+}
+.main-cell {
+    animation: cellDivide 3s ease-in-out infinite;
+}
+.dividing-cell {
+    animation: cellGrow 3s ease-in-out infinite;
+}
+.nucleus {
+    fill: currentColor;
+    opacity: 0.4;
+    animation: nucleusPulse 1.5s ease-in-out infinite;
+}
+.nucleus.n2 { animation-delay: 0.5s; }
+.micro {
+    animation: microFloat 4s ease-in-out infinite;
+}
+.micro.m1 { animation-delay: 0s; }
+.micro.m2 { animation-delay: 1s; }
+.micro.m3 { animation-delay: 2s; }
+.micro.m4 { animation-delay: 3s; }
+.antibody {
+    animation: antibodyFloat 2.5s ease-in-out infinite;
+}
+.antibody.a2 { animation-delay: 1.2s; }
+
+@keyframes amoebaWobble {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.02, 0.98) rotate(-2deg); }
+    50% { transform: scale(0.98, 1.02) rotate(0deg); }
+    75% { transform: scale(1.02, 0.98) rotate(2deg); }
+}
+@keyframes cellDivide {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-5px); }
+}
+@keyframes cellGrow {
+    0%, 100% { transform: translateX(0) scale(1); opacity: 1; }
+    50% { transform: translateX(5px) scale(1.1); opacity: 0.8; }
+}
+@keyframes nucleusPulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+@keyframes microFloat {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(3px, -5px); }
+}
+@keyframes antibodyFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(-5px) rotate(5deg); opacity: 1; }
+}
+
+/* Running - motion */
+.runner-leg-back, .runner-leg-front {
+    animation: runLegs 0.2s ease-in-out infinite alternate;
+    transform-origin: 70px 45px;
+}
+.runner-leg-front { animation-direction: alternate-reverse; }
+.runner-arm-back, .runner-arm-front {
+    animation: runArms 0.2s ease-in-out infinite alternate;
+    transform-origin: 72px 30px;
+}
+.runner-arm-front { animation-direction: alternate-reverse; }
+.motion-line {
+    animation: motionFade 0.4s ease-in-out infinite;
+}
+.motion-line.m1 { animation-delay: 0s; }
+.motion-line.m2 { animation-delay: 0.15s; }
+.motion-line.m3 { animation-delay: 0.3s; }
+@keyframes runLegs {
+    from { transform: rotate(-15deg); }
+    to { transform: rotate(15deg); }
+}
+@keyframes runArms {
+    from { transform: rotate(-10deg); }
+    to { transform: rotate(10deg); }
+}
+@keyframes motionFade {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.8; }
+}
+
+/* Cycling - bike animation */
+.wheel {
+    animation: wheelSpin 0.5s linear infinite;
+}
+.wheel-back { transform-origin: 30px 50px; }
+.wheel-front { transform-origin: 90px 50px; }
+.spoke {
+    stroke-width: 1;
+}
+.pedal {
+    animation: pedalSpin 0.5s linear infinite;
+    transform-origin: 50px 45px;
+}
+.bike-moving {
+    animation: bikeBounce 0.25s ease-in-out infinite;
+}
+.bike-motion {
+    animation: motionFade 0.4s ease-in-out infinite;
+}
+.bike-motion.bm1 { animation-delay: 0s; }
+.bike-motion.bm2 { animation-delay: 0.15s; }
+.bike-motion.bm3 { animation-delay: 0.3s; }
+@keyframes wheelSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes pedalSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes bikeBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-2px); }
+}
+
+/* Languages - speech bubbles */
+.speech {
+    fill: none;
+    animation: speechPop 3s ease-in-out infinite;
+}
+.speech.s1 { animation-delay: 0s; }
+.speech.s2 { animation-delay: 1s; }
+.speech.s3 { animation-delay: 2s; }
+.lang-text {
+    fill: currentColor;
+    stroke: none;
+    animation: speechPop 3s ease-in-out infinite;
+}
+.lang-text.t1 { animation-delay: 0s; }
+.lang-text.t2 { animation-delay: 1s; }
+.lang-text.t3 { animation-delay: 2s; }
+.talk-arm-l {
+    animation: gestureLeft 1.5s ease-in-out infinite;
+    transform-origin: 25px 48px;
+}
+.talk-arm-r {
+    animation: gestureRight 1.5s ease-in-out infinite;
+    transform-origin: 115px 48px;
+}
+@keyframes speechPop {
+    0%, 15% { opacity: 0; transform: scale(0.8); }
+    25%, 65% { opacity: 1; transform: scale(1); }
+    75%, 100% { opacity: 0; transform: scale(0.8); }
+}
+@keyframes gestureLeft {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(10deg); }
+}
+@keyframes gestureRight {
+    0%, 100% { transform: rotate(5deg); }
+    50% { transform: rotate(-10deg); }
+}
+
 /* Footer */
 footer {
     padding-top: 2rem;

@@ -49,13 +49,13 @@
 
         <section class="interests">
             <ul class="tag-cloud">
-                <li><a href="#" class="tag">programming</a></li>
-                <li><a href="#" class="tag">artificial intelligence</a></li>
-                <li><a href="#" class="tag">electronics</a></li>
-                <li><a href="#" class="tag">immunology</a></li>
-                <li><a href="#" class="tag">running</a></li>      
-                <li><a href="#" class="tag">cycling</a></li>         
-                <li><a href="#" class="tag">languages</a></li>                
+                <li><a href="#" class="tag" data-activity="programming">programming</a></li>
+                <li><a href="#" class="tag" data-activity="ai">artificial intelligence</a></li>
+                <li><a href="#" class="tag" data-activity="electronics">electronics</a></li>
+                <li><a href="#" class="tag" data-activity="immunology">immunology</a></li>
+                <li><a href="#" class="tag" data-activity="running">running</a></li>
+                <li><a href="#" class="tag" data-activity="cycling">cycling</a></li>
+                <li><a href="#" class="tag" data-activity="languages">languages</a></li>
             </ul>
         </section>
 
@@ -66,6 +66,153 @@
                 <span class="line"></span>
             </div>
             <p>setting up this corner of the internet.</p>
+
+            <div class="stick-figures">
+                <!-- Programming: typing at desk -->
+                <svg class="stick-figure" data-for="programming" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <circle cx="35" cy="15" r="8"/> <!-- head -->
+                    <line x1="35" y1="23" x2="35" y2="45"/> <!-- body -->
+                    <line x1="35" y1="45" x2="25" y2="65"/> <!-- left leg -->
+                    <line x1="35" y1="45" x2="45" y2="65"/> <!-- right leg -->
+                    <path class="typing-arm-left" d="M35,30 L20,40 L25,50"/> <!-- left arm -->
+                    <path class="typing-arm-right" d="M35,30 L50,40 L45,50"/> <!-- right arm -->
+                    <rect x="55" y="35" width="50" height="30" rx="2"/> <!-- monitor -->
+                    <!-- code lines on screen -->
+                    <line class="code-line cl1" x1="60" y1="42" x2="75" y2="42"/>
+                    <line class="code-line cl2" x1="60" y1="48" x2="85" y2="48"/>
+                    <line class="code-line cl3" x1="60" y1="54" x2="70" y2="54"/>
+                    <line class="code-line cl4" x1="60" y1="60" x2="80" y2="60"/>
+                    <rect class="cursor" x="82" y="58" width="2" height="5"/>
+                    <line x1="80" y1="65" x2="80" y2="75"/> <!-- stand -->
+                    <line x1="65" y1="75" x2="95" y2="75"/> <!-- base -->
+                    <rect x="20" y="50" width="30" height="5" rx="1"/> <!-- keyboard -->
+                </svg>
+
+                <!-- AI: thinking with floating nodes -->
+                <svg class="stick-figure" data-for="ai" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <circle cx="40" cy="20" r="8"/> <!-- head -->
+                    <line x1="40" y1="28" x2="40" y2="50"/> <!-- body -->
+                    <line x1="40" y1="50" x2="30" y2="70"/> <!-- left leg -->
+                    <line x1="40" y1="50" x2="50" y2="70"/> <!-- right leg -->
+                    <path d="M40,35 L25,45"/> <!-- left arm -->
+                    <path class="ai-arm" d="M40,35 L55,25"/> <!-- right arm pointing up -->
+                    <circle class="ai-node n1" cx="75" cy="15" r="5"/>
+                    <circle class="ai-node n2" cx="95" cy="25" r="4"/>
+                    <circle class="ai-node n3" cx="85" cy="40" r="6"/>
+                    <circle class="ai-node n4" cx="105" cy="50" r="4"/>
+                    <circle class="ai-node n5" cx="70" cy="55" r="5"/>
+                    <line class="ai-line" x1="75" y1="15" x2="95" y2="25"/>
+                    <line class="ai-line" x1="95" y1="25" x2="85" y2="40"/>
+                    <line class="ai-line" x1="85" y1="40" x2="75" y2="15"/>
+                    <line class="ai-line" x1="85" y1="40" x2="105" y2="50"/>
+                    <line class="ai-line" x1="85" y1="40" x2="70" y2="55"/>
+                    <line class="ai-line" x1="70" y1="55" x2="105" y2="50"/>
+                </svg>
+
+                <!-- Electronics: soldering -->
+                <svg class="stick-figure" data-for="electronics" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <circle cx="35" cy="15" r="8"/> <!-- head -->
+                    <line x1="35" y1="23" x2="35" y2="45"/> <!-- body -->
+                    <line x1="35" y1="45" x2="25" y2="65"/> <!-- left leg -->
+                    <line x1="35" y1="45" x2="45" y2="65"/> <!-- right leg -->
+                    <path d="M35,30 L20,45"/> <!-- left arm -->
+                    <path class="solder-arm" d="M35,30 L55,40 L75,35"/> <!-- right arm with soldering iron -->
+                    <rect x="60" y="50" width="40" height="20" rx="2"/> <!-- PCB -->
+                    <circle class="spark s1" cx="75" cy="38" r="2"/>
+                    <circle class="spark s2" cx="78" cy="42" r="1"/>
+                    <circle class="spark s3" cx="72" cy="41" r="1.5"/>
+                </svg>
+
+                <!-- Immunology: dividing cells -->
+                <svg class="stick-figure" data-for="immunology" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                    <!-- main cell dividing -->
+                    <ellipse class="amoeba main-cell" cx="40" cy="40" rx="18" ry="15"/>
+                    <ellipse class="amoeba dividing-cell" cx="70" cy="40" rx="14" ry="12"/>
+                    <!-- nucleus -->
+                    <circle class="nucleus n1" cx="38" cy="40" r="5"/>
+                    <circle class="nucleus n2" cx="68" cy="40" r="4"/>
+                    <!-- small floating cells -->
+                    <circle class="micro m1" cx="95" cy="25" r="6"/>
+                    <circle class="micro m2" cx="105" cy="50" r="4"/>
+                    <circle class="micro m3" cx="15" cy="30" r="5"/>
+                    <circle class="micro m4" cx="10" cy="55" r="3"/>
+                    <!-- antibodies -->
+                    <path class="antibody a1" d="M85,65 L88,58 L91,65 M88,58 L88,52 L84,48 M88,52 L92,48"/>
+                    <path class="antibody a2" d="M20,68 L23,61 L26,68 M23,61 L23,55 L19,51 M23,55 L27,51"/>
+                </svg>
+
+                <!-- Running -->
+                <svg class="stick-figure" data-for="running" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <circle class="runner-head" cx="75" cy="15" r="8"/> <!-- head -->
+                    <line class="runner-body" x1="75" y1="23" x2="70" y2="45"/> <!-- body leaning forward -->
+                    <path class="runner-leg-back" d="M70,45 L85,55 L90,70"/> <!-- back leg -->
+                    <path class="runner-leg-front" d="M70,45 L55,55 L45,50"/> <!-- front leg -->
+                    <path class="runner-arm-back" d="M72,30 L85,25"/> <!-- back arm -->
+                    <path class="runner-arm-front" d="M72,30 L60,35"/> <!-- front arm -->
+                    <!-- motion lines behind the runner -->
+                    <line class="motion-line m1" x1="15" y1="20" x2="30" y2="20"/>
+                    <line class="motion-line m2" x1="10" y1="35" x2="28" y2="35"/>
+                    <line class="motion-line m3" x1="15" y1="50" x2="30" y2="50"/>
+                </svg>
+
+                <!-- Cycling -->
+                <svg class="stick-figure" data-for="cycling" viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <g class="bike-moving">
+                        <circle class="wheel wheel-back" cx="30" cy="50" r="15"/> <!-- back wheel -->
+                        <circle class="wheel wheel-front" cx="90" cy="50" r="15"/> <!-- front wheel -->
+                        <circle cx="30" cy="50" r="3"/> <!-- back hub -->
+                        <circle cx="90" cy="50" r="3"/> <!-- front hub -->
+                        <!-- spokes -->
+                        <line class="spoke" x1="30" y1="35" x2="30" y2="65"/>
+                        <line class="spoke" x1="15" y1="50" x2="45" y2="50"/>
+                        <line class="spoke" x1="90" y1="35" x2="90" y2="65"/>
+                        <line class="spoke" x1="75" y1="50" x2="105" y2="50"/>
+                        <!-- frame -->
+                        <path d="M30,50 L50,30 L90,50"/> <!-- main frame -->
+                        <line x1="50" y1="30" x2="50" y2="22"/> <!-- seat post -->
+                        <line x1="45" y1="22" x2="55" y2="22"/> <!-- seat -->
+                        <line x1="50" y1="30" x2="70" y2="28"/> <!-- top tube -->
+                        <line x1="70" y1="28" x2="75" y2="20"/> <!-- handlebar stem -->
+                        <line x1="70" y1="18" x2="80" y2="24"/> <!-- handlebar -->
+                        <circle class="pedal-circle" cx="50" cy="45" r="8"/> <!-- pedal circle -->
+                        <line class="pedal p1" x1="50" y1="45" x2="50" y2="53"/>
+                        <line class="pedal p2" x1="50" y1="45" x2="50" y2="37"/>
+                    </g>
+                    <!-- motion lines -->
+                    <line class="bike-motion bm1" x1="2" y1="40" x2="12" y2="40"/>
+                    <line class="bike-motion bm2" x1="0" y1="50" x2="12" y2="50"/>
+                    <line class="bike-motion bm3" x1="2" y1="60" x2="12" y2="60"/>
+                </svg>
+
+                <!-- Languages: two people talking -->
+                <svg class="stick-figure" data-for="languages" viewBox="0 0 140 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <!-- left person -->
+                    <circle cx="25" cy="35" r="7"/> <!-- head -->
+                    <line x1="25" y1="42" x2="25" y2="60"/> <!-- body -->
+                    <line x1="25" y1="60" x2="18" y2="75"/> <!-- left leg -->
+                    <line x1="25" y1="60" x2="32" y2="75"/> <!-- right leg -->
+                    <path class="talk-arm-l" d="M25,48 L35,42"/> <!-- arm gesturing -->
+                    <path d="M25,48 L15,55"/> <!-- other arm -->
+
+                    <!-- right person -->
+                    <circle cx="115" cy="35" r="7"/> <!-- head -->
+                    <line x1="115" y1="42" x2="115" y2="60"/> <!-- body -->
+                    <line x1="115" y1="60" x2="108" y2="75"/> <!-- left leg -->
+                    <line x1="115" y1="60" x2="122" y2="75"/> <!-- right leg -->
+                    <path class="talk-arm-r" d="M115,48 L105,42"/> <!-- arm gesturing -->
+                    <path d="M115,48 L125,55"/> <!-- other arm -->
+
+                    <!-- speech bubbles -->
+                    <ellipse class="speech s1" cx="50" cy="18" rx="16" ry="10"/>
+                    <text class="lang-text t1" x="50" y="22" text-anchor="middle" font-size="9">你好</text>
+
+                    <ellipse class="speech s2" cx="90" cy="18" rx="14" ry="9"/>
+                    <text class="lang-text t2" x="90" y="21" text-anchor="middle" font-size="8">Hola</text>
+
+                    <ellipse class="speech s3" cx="70" cy="45" rx="13" ry="8"/>
+                    <text class="lang-text t3" x="70" y="48" text-anchor="middle" font-size="7">Hello</text>
+                </svg>
+            </div>
         </section>
 
         <footer>
